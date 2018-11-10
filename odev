@@ -1,0 +1,23 @@
+degisken="QUERY_STRING='adi=can&soyadi=aydın&yas=35&il=izmir' "
+degisken1=degisken[14:-2]
+print(type(degisken1), degisken1)
+degisken2_1=degisken1.replace("=",",")
+print(type(degisken2_1), degisken2_1)
+degisken2_2=degisken2_1.replace("&",",")
+print(type(degisken2_2), degisken2_2)
+
+degisken3=degisken2_2.split(",")
+print(type(degisken3), degisken3)
+key1=[]
+value2=[]
+
+for i in range(len(degisken3)):
+    if(i%2==0):
+        key1.append(degisken3[i])
+    else:
+        value2.append(degisken3[i])
+print(key1)
+print(value2)
+sozluk=dict(zip(key1,value2))
+
+print(sozluk)
